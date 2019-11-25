@@ -6,16 +6,17 @@
 </head>
 <body>
 
-<p id="test" style="font:normal 240px/24px sans-serif;text-align:center"></p>
+<p id="test" style="font:normal 200px/24px sans-serif; text-align:center"></p>
 
 <script>
 document.onmousemove=function init()
 {
 var str = '';
-var ref = 'abcdefghijklmnñopqrstuvwxyz';
+var ref = 'abcdefghijklmnñopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&()*+,-./:;<=>?@[^_`{|}~';
+
 for (var i=0; i<8; i++)
 {
-str = str + ref.charAt(Math.floor(Math.random()*ref.length));
+str = str + ref.charAt(Math.floor (  Math.random()*ref.length )  );
 document.getElementById('test').innerHTML=str;
 }
 }

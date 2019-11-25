@@ -9,6 +9,63 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+        <script>
+            function mifuncion() {
+                
+     
+            var str = '';
+            var password = '';
+      
+            // checkbox special character
+            if (document.getElementById('ch1').checked) {
+                str=str+'\'\\!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
+                
+            }
+
+            // checkbox numerics character
+            if (document.getElementById('ch2').checked) {
+                str=str+'0123456789';
+                
+            }
+
+            // checkbox lowercase character
+            if (document.getElementById('ch3').checked) {
+                str=str+'abcdefghijklmnopqrstuvwxyz';
+                
+            }
+
+    
+            // checkbox Uppercase character
+            if (document.getElementById('ch4').checked) {
+                str=str+'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                
+            }
+            
+            // alert(str);
+        
+                
+            for (var i=0; i<128; i++) {
+                password = password + str.charAt(Math.floor (  Math.random()*str.length )  );
+                document.getElementById('passwordta').value=password;
+                }
+            }
+
+                
+        </script>
+
+
+
+
+
+
+
+
+
+
+
     </head>
         <body>
 
@@ -50,18 +107,18 @@
                             <div class="form-group">
                                 
                                 <input type="checkbox" name="numericsc" id="ch2">
-                                <label for="lenghtc">Lenght</label>
+                                <label for="lenghtc">Numerics Characters</label>
                             </div>
 
                             <div class="form-group">
                                 <input type="checkbox" name="lowercasec" id="ch3">
-                                <label for="lenghtc">Special Character</label>
+                                <label for="lenghtc">Lowercase Character</label>
 
                             </div>
 
                             <div class="form-group">
-                                <input type="checkbox" name="specialc" id="ch4">
-                                <label for="lenghtc">Special Character</label>
+                                <input type="checkbox" name="uppercasec" id="ch4">
+                                <label for="lenghtc">Uppercase Character</label>
 
                             </div>
 
@@ -75,11 +132,11 @@
                     <section class="container border col-md-6 float mb-5">
 
 
-                        <textarea class="col-md-12 h-50 mt-3 dott text-center align-middle" readonly id="password" placeholder="Your Secure Password"  value="hgjfgfjgk" aria-label="Generated Password"></textarea>
+                        <textarea class="col-md-12 h-50 mt-3 dott text-center align-middle"  id="passwordta" placeholder="Your Secure Password"    aria-label="Generated Password">vzfsdsdsd222sd</textarea>
 
 
-                        <button type="button " name="" id="generate" class="btn btn-danger rounded-bottom mt-4 ">Generate Password</button>
-                        <button type="button" name="" id="copy" class="btn btn-secondary mt-4 ">Copy to Clipboard</button>
+                        <button type="button " onclick="mifuncion()" name="btn-generate" id="generate" class="btn btn-danger rounded-bottom mt-4 ">Generate Password</button>
+                        <button type="button" name="btn-copy" id="copy" class="btn btn-secondary mt-4 ">Copy to Clipboard</button>
 
 
                
