@@ -12,7 +12,7 @@
 textarea{
     border-style:dashed;
      height: 150px;
-    line-height: 150px; /* same as height! */
+    line-height: 20px; /* same as height! */
 
 }
 

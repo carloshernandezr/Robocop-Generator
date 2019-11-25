@@ -13,52 +13,79 @@
 
 
         <script>
-            function mifuncion() {
-                
-     
-            var str = '';
-            var password = '';
-      
-            // checkbox special character
-            if (document.getElementById('ch1').checked) {
-                str=str+'\'\\!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
-                
-            }
 
-            // checkbox numerics character
-            if (document.getElementById('ch2').checked) {
-                str=str+'0123456789';
-                
-            }
+           
 
-            // checkbox lowercase character
-            if (document.getElementById('ch3').checked) {
-                str=str+'abcdefghijklmnopqrstuvwxyz';
-                
-            }
+            function checkempty() {
 
+                if ( (document.getElementById('ch1').checked==false) && (document.getElementById('ch2').checked==false) &&  (document.getElementById('ch3').checked==false) &&  (document.getElementById('ch4').checked==false) ) {
+                        alert('select at least one option') ;  
     
-            // checkbox Uppercase character
-            if (document.getElementById('ch4').checked) {
-                str=str+'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                
-            }
+                } else {   
             
-            // alert(str);
-        
+                    mifuncion(); 
+
+                    function mifuncion() {
+                        
+                    
+
+                        
+            
+                    var str = '';
+                    var password = '';
+                    var lenghtpassword =document.getElementById('lenghtpw').value;
                 
-            for (var i=0; i<128; i++) {
-                password = password + str.charAt(Math.floor (  Math.random()*str.length )  );
-                document.getElementById('passwordta').value=password;
-                }
-            }
+            
+                    // checkbox special character
+                    if (document.getElementById('ch1').checked) {
+                        str=str+'\'\\!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
+                        
+                    }
+
+                    // checkbox numerics character
+                    if (document.getElementById('ch2').checked) {
+                        str=str+'0123456789';
+                        
+                    }
+
+                    // checkbox lowercase character
+                    if (document.getElementById('ch3').checked) {
+                        str=str+'abcdefghijklmnopqrstuvwxyz';
+                        
+                    }
+
+            
+                    // checkbox Uppercase character
+                    if (document.getElementById('ch4').checked) {
+                        str=str+'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        
+                    }
+                    
+                    // alert(str);
+                
+                        
+                    for (var i=0; i<lenghtpassword; i++) {
+                        password = password + str.charAt(Math.floor (  Math.random()*str.length )  );
+                        document.getElementById('passwordta').value=password;
+                    }
+
+                    // hacer la funcion de validar aqui
+
+
+
+
+
+
+
+        
+                    
+                    } // end mifuncion
+                } //else checkempty
+
+            }//checkempty
 
                 
         </script>
-
-
-
-
 
 
 
@@ -86,39 +113,39 @@
                         <H2>Criteria</H2>
 
 
-                        <form action="">                            
+                        <form>                            
                             
                             <div class="form-group">
                                 
                                 <!-- <input type="range" name="lenghtc" id="range1" min="8" max="128"> -->
-                                <input type="range" name="lenghtc" min="8" max="128" value="8" oninput="this.form.textlenghtc.value=this.value" />
+                                <input type="range" id="lenghtpw" name="lenghtc" min="8" max="128" value="8" oninput="this.form.textlenghtc.value=this.value" />
                                 <br>
                                 
-                                <input type="number" name="textlenghtc" min="8" max="128" value="8" oninput="this.form.lenghtc.value=this.value" />
-                                <label for="lenghtc">Lenght</label>
+                                <input type="number" id="lenghtnumber" name="textlenghtc" min="8" max="128" value="8" oninput="this.form.lenghtc.value=this.value" />
+                                <label for="lenghtnumber">Lenght</label>
                             </div>
 
                             <div class="form-group">
                                 
                                 <input type="checkbox" name="specialc" id="ch1">
-                                <label for="lenghtc">Special Character</label>
+                                <label for="ch1">Special Character</label>
                             </div>
 
                             <div class="form-group">
                                 
                                 <input type="checkbox" name="numericsc" id="ch2">
-                                <label for="lenghtc">Numerics Characters</label>
+                                <label for="ch2">Numerics Characters</label>
                             </div>
 
                             <div class="form-group">
                                 <input type="checkbox" name="lowercasec" id="ch3">
-                                <label for="lenghtc">Lowercase Character</label>
+                                <label for="ch3">Lowercase Character</label>
 
                             </div>
 
                             <div class="form-group">
                                 <input type="checkbox" name="uppercasec" id="ch4">
-                                <label for="lenghtc">Uppercase Character</label>
+                                <label for="ch4">Uppercase Character</label>
 
                             </div>
 
@@ -130,12 +157,13 @@
 
                     <!-- second block -->
                     <section class="container border col-md-6 float mb-5">
+                        <h2>New Password</h2>
 
 
-                        <textarea class="col-md-12 h-50 mt-3 dott text-center align-middle"  id="passwordta" placeholder="Your Secure Password"    aria-label="Generated Password">vzfsdsdsd222sd</textarea>
+                        <textarea class="col-md-12 h-50 mt-3 text-center align-middle"  id="passwordta" placeholder="Your Secure Password" readonly   aria-label="Generated Password"></textarea>
 
 
-                        <button type="button " onclick="mifuncion()" name="btn-generate" id="generate" class="btn btn-danger rounded-bottom mt-4 ">Generate Password</button>
+                        <button type="button"  name="btn-generate" id="generate" class="btn btn-danger rounded-bottom mt-4 " onclick="checkempty()">Generate Password</button>
                         <button type="button" name="btn-copy" id="copy" class="btn btn-secondary mt-4 ">Copy to Clipboard</button>
 
 
