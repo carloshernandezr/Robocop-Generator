@@ -32,6 +32,7 @@
                         
             
                     var str = '';
+                    var sp = '', num = '', low= '', upp= '';
                     var password = '';
                     var lenghtpassword =document.getElementById('lenghtpw').value;
                 
@@ -39,18 +40,20 @@
                     // checkbox special character
                     if (document.getElementById('ch1').checked) {
                         str=str+'\'\\!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
-                        
+                        sp='\'\\!"#$%&()*+,-./:;<=>?@[]^_`{|}~';
                     }
 
                     // checkbox numerics character
                     if (document.getElementById('ch2').checked) {
                         str=str+'0123456789';
+                        num='0123456789';
                         
                     }
 
                     // checkbox lowercase character
                     if (document.getElementById('ch3').checked) {
                         str=str+'abcdefghijklmnopqrstuvwxyz';
+                        low='abcdefghijklmnopqrstuvwxyz';
                         
                     }
 
@@ -58,6 +61,7 @@
                     // checkbox Uppercase character
                     if (document.getElementById('ch4').checked) {
                         str=str+'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        upp='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
                         
                     }
                     
@@ -66,10 +70,135 @@
                         
                     for (var i=0; i<lenghtpassword; i++) {
                         password = password + str.charAt(Math.floor (  Math.random()*str.length )  );
-                        document.getElementById('passwordta').value=password;
+                        document.getElementById('passwordta').value=password;//no mostraar aqui
                     }
 
                     // hacer la funcion de validar aqui
+
+                    var spChar ='';
+                    var nmChar='';
+                    var lwChar='';
+                    var upChar='';
+
+
+                    for (var  i= 0; i < lenghtpassword; i++) {
+
+
+                     
+                        // especial character
+                        if ( sp.indexOf( password.charAt(i) ) != -1 ) {
+                            spChar=true;
+                            // alert('true')                           
+                        } 
+
+                         // number
+                         if ( num.indexOf( password.charAt(i) ) != -1 ) {
+                            nmChar=true;
+                            // alert('true')                           
+                        } 
+
+                         // lowercase
+                         if ( low.indexOf( password.charAt(i) ) != -1 ) {
+                            lwChar=true;
+                            // alert('true')                           
+                        } 
+
+                         // uppercase
+                         if ( upp.indexOf( password.charAt(i) ) != -1 ) {
+                            upChar=true;
+                            // alert('true')                           
+                        } 
+
+                                               
+                        
+                    }
+
+
+
+                    //  if ( document.getElementById('ch1').checked) {
+
+                    //     if (spChar==false) {
+
+                    //         function checkempty();
+                    //     }
+                       
+                         
+                    //  }
+
+
+                     if (document.getElementById('ch1').checked) {
+                         alert('entro1')
+
+                        if (spChar==false) {
+                            alert('repetir1')
+                            checkempty();
+                            return;
+                        
+                    }
+                        
+                    }
+
+                    if (document.getElementById('ch2').checked) {
+                         alert('entro2')
+
+                        if (nmChar==false) {
+                            alert('repetir2')
+                            checkempty();
+                            return;
+                        
+                    }
+                        
+                    }
+
+                    if (document.getElementById('ch3').checked) {
+                         alert('entro3')
+
+                        if (lwChar==false) {
+                            alert('repetir3')
+                            checkempty();
+                            return;
+                        
+                    }
+                        
+                    }
+
+                    if (document.getElementById('ch4').checked) {
+                         alert('entro4')
+
+                        if (upChar==false) {
+                            alert('repetir4')
+                            checkempty();
+                            return;
+                        
+                    }
+                        
+                    }
+
+
+
+                    //   if ( document.getElementById('ch2').checked) {
+
+                    //     alert('sp');
+                         
+                    //  }
+
+                    //   if ( document.getElementById('ch3').checked) {
+
+                    //     alert('sp');
+                         
+                    //  }
+
+                    //   if ( document.getElementById('ch4').checked) {
+
+                    //     alert('sp');
+                         
+                    //  }
+
+                     
+
+                     
+
+ 
 
 
 
