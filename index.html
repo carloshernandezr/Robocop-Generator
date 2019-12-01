@@ -120,7 +120,7 @@
                           
 
                         if (spChar==false) {
-                            alert('repetir1')
+                            
                             checkempty();
                             return;
                         
@@ -132,7 +132,7 @@
                          
 
                         if (nmChar==false) {
-                            alert('repetir2')
+                           
                             checkempty();
                             return;
                         
@@ -144,7 +144,7 @@
                          
 
                         if (lwChar==false) {
-                            alert('repetir3')
+                         
                             checkempty();
                             return;
                         
@@ -156,7 +156,7 @@
                           
 
                         if (upChar==false) {
-                            alert('repetir4')
+                           
                             checkempty();
                             return;
                         
@@ -173,17 +173,22 @@
             }//checkempty
 
             function copyfunction() {
-                var copyText = document.querySelector("#passwordta");
-                copyText.select();
-                document.execCommand("copy");
+                if (document.querySelector("#passwordta").value=="") {
+
+                    alert("Please, generate a new password first.")
+                    
+                } else {
+
+                    var copyText = document.querySelector("#passwordta");
+                    copyText.select();
+                    document.execCommand("copy");
+                    alert("New password copied to clipboard")
+                }
+
+
             }
 
-            //document.querySelector("#passwordta").addEventListener("click", copyfunction);
-
-
-
-
-                
+             
         </script>
 
 
@@ -261,10 +266,10 @@
 
                         <textarea class="col-md-12 h-50 mt-3 text-center align-middle"  id="passwordta" placeholder="Your Secure Password" readonly   aria-label="Generated Password"></textarea>
 
-
-                        <button type="button"  name="btn-generate" id="generate" class="btn btn-danger rounded-bottom mt-4 " onclick="checkempty()">Generate Password</button>
-                        <button type="button" name="btn-copy" id="copybtn" class="btn btn-secondary mt-4 " onclick="copyfunction()">Copy to Clipboard</button>
-
+                        <div class="container ">
+                        <button type="button"  name="btn-generate" id="generate" class="btn btn-danger rounded-bottom mt-4 float-left" onclick="checkempty()">Generate Password</button>
+                        <button type="button" name="btn-copy" id="copybtn" class="btn btn-secondary mt-4 float-right" onclick="copyfunction()">Copy to Clipboard</button>
+                        </div>
 
                
                     </section>
@@ -286,7 +291,7 @@
             <footer class="page-footer font-small border fixed-bottom myfooter border-left-0 border-right-0 ">
 
                 <!-- Copyright -->
-                <div class="footer-copyright text-center py-3">   Copyright© 2019 CarlosH </div>
+                <div class="footer-copyright text-center py-3">   Copyright© 2019 Carlos Hernandez </div>
                 <!-- Copyright -->
           
             </footer>
