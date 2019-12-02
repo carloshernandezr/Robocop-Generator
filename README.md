@@ -13,6 +13,10 @@ and after that,  click in "Generate Password".
 
 
 
-and the new password wil be show in the text area. there are the option "copy to clipboard" for copy the new password.
+and the new password wil be show in the text area. 
+
+
+
+there are the option "copy to clipboard" for copy the new password.
 
 
