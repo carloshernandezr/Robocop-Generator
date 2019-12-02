@@ -19,4 +19,7 @@ and the new password wil be show in the text area.
 
 there are the option "copy to clipboard" for copy the new password.
 
+![copy](https://user-images.githubusercontent.com/56489980/69923156-cc48e780-145f-11ea-8396-643ac56114d1.jpg)
+
+
 
