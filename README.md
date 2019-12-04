@@ -1,9 +1,9 @@
-# homework3-js
-Javascript
+# Robocop-Generator
+Javascript+ HTML
 
 For a live Demo click  https://carloshernandezr.github.io/Robocop-Generator/
 
-this is a generated password. for create a new password, the user need select the long and any criteria.
+This is a generated password. for create a new password, the user need select the long and any criteria.
 
 ![criteria](https://user-images.githubusercontent.com/56489980/69923039-aff87b00-145e-11ea-8a41-882386759362.jpg)
 
