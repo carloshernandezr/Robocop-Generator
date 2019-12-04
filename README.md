@@ -1,7 +1,7 @@
 # homework3-js
 Javascript
 
-For a live Demo click  https://carloshernandezr.github.io/homework3-js/
+For a live Demo click  https://carloshernandezr.github.io/Robocop-Generator/
 
 this is a generated password. for create a new password, the user need select the long and any criteria.
 
